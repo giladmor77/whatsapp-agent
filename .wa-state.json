@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "project_dir": "/Users/giladmor/whatsapp-agent",
+  "bot_name": "עוזר אישי גלעד",
+  "archetype": "personal_assistant",
+  "current_stage": "deploy",
+  "completed_stages": ["setup", "characterize", "build"],
+  "connected_tools": [],
+  "render_url": null,
+  "persistence_choice": "external_db_planned",
+  "last_touched_iso": "2026-05-22T00:00:00Z"
+}
