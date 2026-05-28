@@ -1,10 +1,14 @@
 from datetime import datetime
+from pathlib import Path
 
 from apscheduler.jobstores.sqlalchemy import SQLAlchemyJobStore
 from apscheduler.schedulers.background import BackgroundScheduler
 
 from config import DATABASE_PATH
 from tools import TOOL_REGISTRY
+
+# Ensure the data directory exists before APScheduler tries to create the jobstore
+Path(DATABASE_PATH).parent.mkdir(parents=True, exist_ok=True)
 
 _jobstore_url = f"sqlite:///{DATABASE_PATH}"
 _scheduler = BackgroundScheduler(
