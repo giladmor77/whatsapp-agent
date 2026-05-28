@@ -9,9 +9,11 @@ from config import ANSWER_GROUPS, AUTHORIZED_PHONES, GREEN_API_INSTANCE, SPEC
 from database import append, init_db, is_processed, mark_processed
 from tools.whatsapp import send_reply
 
-# Import reminders to register tools before agent is loaded
+# Import tools to register them before agent is loaded
 if "reminders" in SPEC.get("tools", []):
     import tools.reminders  # noqa: F401
+if "google_calendar" in SPEC.get("tools", []):
+    import tools.google_calendar  # noqa: F401
 
 
 @asynccontextmanager
